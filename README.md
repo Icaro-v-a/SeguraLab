@@ -1,4 +1,4 @@
-# Encontre a Vulnerabilidade — SeguraLab
+# Encontre a Vulnerabilidade: SeguraLab
 
 ## Contexto
 
@@ -43,31 +43,31 @@ Para encerrar, pressione Ctrl+C no terminal. Após alterar arquivos Java, encerr
 
 ## Chamados da revisão de segurança
 
-### SEC-01 — Pesquisa não confiável
+### SEC-01: Pesquisa não confiável
 
 A equipe de suporte notou que determinados caracteres em uma busca podem alterar seu comportamento ou provocar erros inesperados. Uma busca deve tratar o conteúdo digitado como texto, e não permitir que ele interfira na consulta ao banco.
 
 **Resultado esperado:** pesquisas comuns e com apóstrofos, sinais de porcentagem ou sublinhados funcionam normalmente; o resultado respeita o perfil selecionado. A correção deve separar a instrução SQL dos valores recebidos, não apenas bloquear caracteres.
 
-### SEC-02 — Formatação inesperada
+### SEC-02: Formatação inesperada
 
 Um solicitante informou que parte da descrição de seu chamado foi exibida com uma formatação que ele não pretendia. O conteúdo registrado pelo usuário não deveria modificar a estrutura visual da página.
 
 **Resultado esperado:** mesmo um texto contendo marcações simples, como `<b>Exemplo</b>`, aparece literalmente na listagem e no detalhe, sem criar elementos HTML a partir da entrada.
 
-### SEC-03 — Registro fora do perfil
+### SEC-03: Registro fora do perfil
 
 A equipe observou que a listagem e a consulta por protocolo nem sempre respeitam os mesmos limites de acesso.
 
 **Resultado esperado:** Beatriz não pode receber informações de registros de terceiros, mesmo consultando um protocolo conhecido diretamente. Rafael continua conseguindo consultar os registros. O servidor deve aplicar a regra de acesso; ocultar um botão não é suficiente.
 
-### SEC-04 — Solicitações inconsistentes
+### SEC-04: Solicitações inconsistentes
 
 Algumas solicitações foram registradas com informações que não atendem às regras de negócio, apesar de o formulário possuir validações.
 
 **Resultado esperado:** o servidor rejeita títulos e descrições vazios, curtos ou longos demais, e prioridades inexistentes, sem salvar registros inválidos. Chamados válidos continuam sendo cadastrados. A proteção deve funcionar mesmo quando os dados não passam pelo formulário HTML.
 
-### SEC-05 — Informação interna em mensagens de erro
+### SEC-05: Informação interna em mensagens de erro
 
 O suporte recebeu relatos de mensagens de erro contendo detalhes técnicos que não deveriam estar disponíveis aos usuários.
 
